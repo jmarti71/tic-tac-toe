@@ -1,0 +1,352 @@
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(30, 28, 48);
+}
+
+hr {
+    margin:0;
+    border: 1px solid rgb(127, 247, 205);
+}
+
+.title-contain {
+    margin:0;
+    background-image: linear-gradient(to bottom right, rgb(7, 4, 37), rgb(127, 247, 205));
+}
+
+.title {
+    padding: 16px;
+    margin:0;
+    text-align: center;
+    color: rgb(161, 255, 253);
+    font-size: 64px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*------- HOME SCREEN ---------------------------------------------------------*/
+
+.mainmenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgb(30, 28, 48); MOVED TO BODY*/
+    color: rgb(187, 179, 255);
+    flex: 1 1 auto;
+}
+
+.mainmenu > p {
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.selection-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10vw;
+}
+
+.selection-btns button{
+    width: 150px;
+    height: 150px;
+    font-size: 108px;
+    border-radius: 12px;
+    border: 2px solid rgb(187, 179, 255);
+    background:none;
+    color: rgb(191, 255, 240);
+}
+/* .selection-btns button:hover{
+    cursor: pointer;
+} */
+
+button.selected { 
+    background-image: linear-gradient(to right, rgba(187, 179, 255, 0), rgb(187, 179, 255));
+}
+
+.selection-btns p {
+    text-align: center;
+    margin: 2px 0;
+}
+
+/*animation circling button--put in function??------------reference git in readme----------------------------------------------- */
+.start-btn-anim.active {
+    border: none;
+    color:rgb(62, 231, 208)
+}
+
+.start-btn-anim.active:hover {
+    cursor: pointer;
+}
+
+.start-btn-anim{
+    border: 2px solid rgba(62, 231, 208, 0.167);
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    color: rgba(62, 231, 208, 0.167);
+    letter-spacing: 4px;
+    margin-top: 40px;
+    cursor: default;
+}
+
+.start-btn-anim.active span {
+    position: absolute;
+    display: block;
+}
+
+.start-btn-anim.active span:nth-child(1) {
+    top:0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(62, 231, 208));
+    animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+    0% { 
+        left: -100%;
+    }
+    50%, 100% {
+        left: 100%;
+    }
+}
+
+.start-btn-anim.active span:nth-child(2) {
+    top:-100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgb(62, 231, 208));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+    0%{ 
+        top: -100%;
+    }
+    50%, 100% {
+        top: 100%;
+    }
+}
+
+.start-btn-anim.active span:nth-child(3) {
+    right:-100%;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(270deg, transparent, rgb(62, 231, 208));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+    0%{ 
+        right: -100%;
+    }
+    50%, 100% {
+        right: 100%;
+    }
+}
+
+.start-btn-anim.active span:nth-child(4) {
+    bottom:-100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, rgb(62, 231, 208));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+    0%{ 
+        bottom: -100%;
+    }
+    50%, 100% {
+        bottom: 100%;
+    }
+}
+/*--------------------------------------- GAME BOARD SCREEN -----------------------------------------------------------------*/
+
+.gameboard {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: grid;
+    grid-template: 10vh 2fr 10vh/ 1fr 2fr 1fr;
+    height: 85vh;
+}
+
+.status-head {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    color:rgba(62, 231, 208, 0.906);
+    font-size: 2vw;
+}
+
+.status-head > p {
+    margin:0;
+    padding: 15px;
+    text-align: center;
+}
+
+.player-column {
+    grid-row: 2 /3;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.player-column div {
+    margin: 5vh;
+    background: none;
+    border: 4px solid rgba(62, 231, 208, 0.97);
+    color:rgba(62, 231, 208, 0.906);
+    text-align: center;
+}
+
+.player-column div:nth-child(1) > p {
+    margin: 5px;
+    font-size: 30px;
+ }
+
+.player-column div:nth-child(2) > p {
+   margin: 5px;
+   font-size: 120px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-board {
+    justify-self: center;
+    width: 500px;
+    grid-row: 2 /3;
+    grid-column: 2 / 3;
+    margin: 0 5vh 3vh 5vh;
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(3, 1fr);   
+}
+
+.grid-board div {
+    border-right: 2px solid rgba(62, 231, 208, 0.97);
+    border-bottom: 2px solid rgba(62, 231, 208, 0.97);
+    color:rgba(94, 223, 200, 0.868);
+    font-size: 120px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-board div:nth-child(1),
+.grid-board div:nth-child(2),
+.grid-board div:nth-child(3)
+{
+    border-top: 2px solid rgba(62, 231, 208, 0.97);
+}
+
+.grid-board div:nth-child(1),
+.grid-board div:nth-child(4),
+.grid-board div:nth-child(7)
+{
+    border-left: 2px solid rgba(62, 231, 208, 0.97);
+}
+
+.opponent-column {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.opponent-column div {
+    margin: 5vh;
+    padding: 1%;
+    background: none;
+    border: 4px solid rgb(187, 179, 255);
+    color:rgb(187, 179, 255);
+    text-align: center;
+}
+
+.opponent-column div:nth-child(1) > p {
+    margin: 5px;
+    font-size: 30px;
+ }
+
+.opponent-column div:nth-child(2) > p {
+    margin: 5px;
+    font-size: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+
+ .quit-div {
+    grid-row: 3 / 4;
+    grid-column: 2 /3;
+    display: flex;
+    justify-content: center;
+ }
+
+ .quit-div > button {
+    margin: 10px;
+    background: none;
+    border: 2px solid rgba(255, 97, 221, 0.97);
+    color:rgba(255, 97, 221, 0.97);
+    font-size: 28px;
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+ /* .quit-div > button:hover {
+     cursor: pointer;
+ } */
+
+ .win-prompt {
+     grid-row: 3 / 4;
+     grid-column: 1 / 4;
+     display: flex;
+     flex-direction: column;
+ }
+
+ .win-prompt > p {
+    margin: 4px 0 12px 0;
+    text-align: center;
+    font-size: 24px;
+    color:rgba(235, 255, 239, 0.906);
+ }
+
+ .winbtn-div {
+     display: flex;
+     align-items: center;
+     justify-content:center;
+     gap: 25px;
+    
+ }
+
+ .winbtn-div button {
+    background: none;
+    border: 2px solid rgba(62, 231, 208, 0.97);
+    color:rgba(229, 255, 252, 0.906);
+    font-size: 24px;
+    font-family: 'Courier New', Courier, monospace;
+ }
+
+ /* .winbtn-div button:hover {
+    cursor: pointer;
+} */
+
+.hide {
+    display: none;
+}
