@@ -1,6 +1,6 @@
 # tic-tac-toe
 -------------
-Try it out: 
+Try it out: https://jmarti71.github.io/tic-tac-toe/
 
 ## Description
 Designed and constructed a Tic-tac-toe game that users can play in their browser against a local player or an ai. One of the primary goals of this project was to implement factory functions and use the module design pattern when writing the JavaScript code. Regarding the ai difficulty, the ai is not impossible to beat, but will attempt to block the players move if the player already has two markers placed in a winning pattern. There will also be a 1.5 second delay before the ai places it's marker after the player's turn. When it comes the the home page UI, I wanted to implement something that gave user feedback to signal when the game can start. After searching online, I found a button animation that I thought would work great for this. I will reference the github link for that animation below.
