@@ -17,13 +17,13 @@
     <div class="mainmenu show">
         <p>Select Your Suit</p>
         <div class="selection-btns">
-            <button id="o-btn">O</button>
-            <button class="selected" id="x-btn">X</button>
+            <button  id="o-btn">O</button>
+            <button  id="x-btn">X</button>
         </div>
         <p>Select Opponent</p>
         <div class="selection-btns">
             <div>
-                <button class="material-symbols-outlined selected" id="ai-btn">smart_toy</button>
+                <button class="material-symbols-outlined" id="ai-btn">smart_toy</button>
                 <p>Ai</p>
             </div>
             <div>
@@ -38,48 +38,34 @@
             <span></span>
             Start Game
         </a>
-        <!-- <button class="start-btn">Start Game</button> -->
     </div> 
     <div class="gameboard hide">
         <div class="status-head">
-            <p>Player 1's Turn</p>
+            <p class="status-text"></p>
         </div>
         <div class="player-column">
             <div>
-                <p>Player 1</p>
+                <p class="player-name">Player 1</p>
             </div>
             <div>
-                <p>X</p>
+                <p class="player-suit"></p>
             </div>
         </div>
-        <div class="grid-board">
-            <div>o</div>
-            <div>x</div>
-            <div></div>
-            <div>x</div>
-            <div></div>
-            <div>o</div>
-            <div>o</div>
-            <div></div>
-            <div></div>
-        </div>
+        <div class="grid-board"></div>
         <div class="opponent-column">
             <div>
-                <p>Ai</p>
+                <p class="opp-name">Ai</p>
             </div>
             <div>
-                <p>O</p>
+                <p class="opp-suit"></p>
             </div>
         </div>
         <div class="quit-div">
-            <button>Quit Game</button>
+            <button class="quit-btn">Quit Game</button>
         </div>
-        <div class="win-prompt hide">
-            <p>___ is the winner!</p>
-            <div class="winbtn-div">
-                <button>Play Again</button>
-                <button>Main Menu</button>
-            </div>
+        <div class="game-end-div hide">
+            <button class="retry-btn">Play Again</button>
+            <button class="home-btn">Main Menu</button>
         </div>
     </div>
 </body>
